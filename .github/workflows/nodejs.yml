@@ -11,9 +11,11 @@ jobs:
       - name: Clone master branch
         run: git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/IASAStudentCouncil/mister_iasa.git" --branch dev --single-branch ./process
       - name: Generate static pages
-        run: cd ./process
-      - run: npm install
-      - run: npm run build
+        run: |
+          cd ./process
+          ls ./process
+          npm install
+          npm run build
       - run: mkdir ../build
       - run: cp ./process/build ./build
       - run: cd ../build
