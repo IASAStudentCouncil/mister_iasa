@@ -6,10 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Make process folder
+      - name: Make folders
         run: mkdir process
-      - name: Clone dev branch
+        run: mkdir build
+      - name: Clone branches
         run: git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/IASAStudentCouncil/mister_iasa.git" --branch dev --single-branch ./process
+        run: git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/IASAStudentCouncil/mister_iasa.git" --branch gh-pages --single-branch ./build
       - name: Generate static pages
         run: |
           cd ./process
@@ -17,10 +19,8 @@ jobs:
           npm install
           npm run build
       - run: cd ../
-      - run: mkdir build
       - run: cp -r ./process/build ./
       - run: cd ./build
-      - run: git init
       - name: Set git config and add changes
         run: |
           git config --global user.email "${GITHUB_ACTOR}@https://users.noreply.github.com/"
