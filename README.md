@@ -1,6 +1,8 @@
 # About
  Mister IASA 2020 Landing Page  
  Design: https://www.figma.com/file/tiL6Eu1FVQZJTG4o9orSJ5/mister-huister
+ ![MISTER IASA GH-pages CI](https://github.com/IASAStudentCouncil/mister_iasa/workflows/MISTER%20IASA%20GH-pages%20CI/badge.svg)
+ https://iasastudentcouncil.github.io/mister_iasa/
 
 # Development
  1. Clone repository `git clone https://github.com/IASAStudentCouncil/mister_iasa.git`
