@@ -1,6 +1,5 @@
-body{
-	font-family:"Clanderon";
-
+body, .teaser-wrap{
+	font-family:"Clanderon",sans-serif;
 }
 
 header {
@@ -11,5 +10,15 @@ header {
 }
 
 .nav-link{
+	justify-self: center;
+	text-transform: uppercase;
+	font-size: 27px;
+	//line-height: 44px;
 	color:$primary-text;
+}
+
+@media (max-width: $breakpoint-large) {
+	.nav-link{
+		font-size: 20px;
+	}
 }
