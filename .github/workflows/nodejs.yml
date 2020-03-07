@@ -1,4 +1,4 @@
-name: Node.js CI
+name: MISTER IASA GH-pages CI
 
 on: [push]
 
@@ -17,7 +17,6 @@ jobs:
       - name: Generate static pages
         run: |
           cd ./process
-          ls
           npm install
           npm run build
       - run: cd ../
