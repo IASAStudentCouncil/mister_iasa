@@ -12,34 +12,28 @@ jobs:
           mkdir build
       - name: Clone branches
         run: |
-          git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/IASAStudentCouncil/mister_iasa.git" --branch dev --single-branch ./process
-          
-    # git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/IASAStudentCouncil/mister_iasa.git" --branch gh-pages --single-branch ./build
+          git clone "https://${{ secrets.GH_PAT }}@github.com/IASAStudentCouncil/mister_iasa.git" --branch dev --single-branch ./process
+          git clone "https://${{ secrets.GH_PAT }}@github.com/IASAStudentCouncil/mister_iasa.git" --branch gh-pages --single-branch ./build
       - name: Generate static pages
         run: |
           cd ./process
           ls
           npm install
           npm run build
-      - name: Deploy site to gh-pages branch
-        uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
-        with:
-          repo-token: ${{ secrets.GH_PAT }}
-          site-directory: "build"
-#       - run: cd ../
-#       - run: cp -r ./process/build ./
-#       - run: cd ./build
-#       - name: Set git config and add changes
-#         run: |
-#           git config --global user.email "${GITHUB_ACTOR}@https://users.noreply.github.com/"
-#           git config --global user.name "${GITHUB_ACTOR}"
-#           git add --all
-#         working-directory: ./build
-#       - name: Push and send notification
-#         run: |
-#           COMMIT_MESSAGE="Update pages on $(date +'%Y-%m-%d %H:%M:%S')"
-#           git diff-index --quiet --cached HEAD -- && echo "No changes!" && exit 0 || echo $COMMIT_MESSAGE
-#           # Only if repo have changes
-#           git commit -m "${COMMIT_MESSAGE}"
-#           git push --force https://${{ secrets.ACCESS_TOKEN }}@github.com/IASAStudentCouncil/mister_iasa.git
-#         working-directory: ./build
+      - run: cd ../
+      - run: cp -r ./process/build ./
+      - run: cd ./build
+      - name: Set git config and add changes
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@https://users.noreply.github.com/"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add --all
+        working-directory: ./build
+      - name: Push and send notification
+        run: |
+          COMMIT_MESSAGE="Update pages on $(date +'%Y-%m-%d %H:%M:%S')"
+          git diff-index --quiet --cached HEAD -- && echo "No changes!" && exit 0 || echo $COMMIT_MESSAGE
+          # Only if repo have changes
+          git commit -m "${COMMIT_MESSAGE}"
+          git push --force https://${{ secrets.GH_PAT }}@github.com/IASAStudentCouncil/mister_iasa.git
+        working-directory: ./build
