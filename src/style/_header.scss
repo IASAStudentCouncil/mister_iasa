@@ -1,5 +1,15 @@
+body{
+	font-family:"Clanderon";
+
+}
+
 header {
+	font-family:"Clanderon";
 	width: 100%;
-	height: 720px;
-	background: $background;
+	height: 883px;
+	background: url(../img/desktop_back.png) no-repeat center center;
+}
+
+.nav-link{
+	color:$primary-text;
 }
