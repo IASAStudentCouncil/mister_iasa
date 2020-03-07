@@ -33,5 +33,5 @@ jobs:
           git diff-index --quiet --cached HEAD -- && echo "No changes!" && exit 0 || echo $COMMIT_MESSAGE
           # Only if repo have changes
           git commit -m "${COMMIT_MESSAGE}"
-          git push https://${{ secrets.ACCESS_TOKEN }}@github.com/IASAStudentCouncil/mister_iasa.git gh-pages
+          git push --force https://${{ secrets.ACCESS_TOKEN }}@github.com/IASAStudentCouncil/mister_iasa.git HEAD:gh-pages
         working-directory: ./build
