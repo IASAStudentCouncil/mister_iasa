@@ -16,9 +16,10 @@ jobs:
           ls
           npm install
           npm run build
-      - run: mkdir ../build
-      - run: cp ./build ../build
-      - run: cd ../build
+      - run: cd ../
+      - run: mkdir build
+      - run: cp ./process/build ./build
+      - run: cd ./build
       - run: git init
       - name: Set git config and add changes
         run: |
