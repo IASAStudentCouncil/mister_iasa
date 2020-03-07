@@ -1,0 +1,34 @@
+name: Node.js CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make process folder
+        run: mkdir process
+      - name: Clone master branch
+        run: git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/IASAStudentCouncil/mister_iasa.git" --branch dev --single-branch ./process
+      - name: Generate static pages
+        run: cd ./process
+      - run: npm istall
+      - run: npm run build
+      - run: mkdir ../build
+      - run: cp ./process/build ./build
+      - run: cd ../build
+      - run: git init
+      - name: Set git config and add changes
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@https://users.noreply.github.com/"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add --all
+        working-directory: ./build
+      - name: Push and send notification
+        run: |
+          COMMIT_MESSAGE="Update pages on $(date +'%Y-%m-%d %H:%M:%S')"
+          git diff-index --quiet --cached HEAD -- && echo "No changes!" && exit 0 || echo $COMMIT_MESSAGE
+          # Only if repo have changes
+          git commit -m "${COMMIT_MESSAGE}"
+          git push https://${{ secrets.ACCESS_TOKEN }}@github.com/IASAStudentCouncil/mister_iasa.git gh-pages
+        working-directory: ./build
