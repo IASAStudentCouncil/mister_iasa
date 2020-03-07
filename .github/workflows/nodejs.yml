@@ -13,7 +13,7 @@ jobs:
       - name: Generate static pages
         run: |
           cd ./process
-          ls ./process
+          ls
           npm install
           npm run build
       - run: mkdir ../build
