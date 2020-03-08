@@ -1,6 +1,9 @@
 name: MISTER IASA GH-pages CI
 
-on: [push]
+on:
+  push:
+    branches: 
+      - dev
 
 jobs:
   build:
