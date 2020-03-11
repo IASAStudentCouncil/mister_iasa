@@ -1,7 +1,11 @@
 header {
 	width: 100%;
 	height: 883px;
-	background: url(../img/desktop_back.png) no-repeat center center;
+	/*background: url(../img/desktop_back.png) no-repeat center center;*/
+    background-color: #852525;
+    overflow: hidden;
+    background-size: 100%;
+    position: relative;
 }
 
 .nav-link{
@@ -16,4 +20,28 @@ header {
 	.nav-link{
 		font-size: 20px;
 	}
+}
+
+#peaky__blinders {
+    position: absolute;
+    top: 166px;
+    width: 100%;
+    
+    img {
+        width: 100%;
+    }
+}
+
+#man {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    
+    img {
+        position: absolute;
+        right: 0;
+        top: -60px;
+        right: -100px;
+        width: 700px;
+    }
 }
