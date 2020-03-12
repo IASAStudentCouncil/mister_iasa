@@ -1,6 +1,6 @@
-let peaky = document.getElementById('peaky__blinders')
-let man = document.getElementById('man')
-const levels = Array.from(document.querySelectorAll('.lvl'))
+const peaky = document.getElementById('peaky__blinders')
+const man = document.getElementById('man')
+const level = document.getElementById('lvl')
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -31,9 +31,7 @@ function parallax_desktop(top) {
 }
 
 function parallax_mobile(top) {
-    levels.forEach((lvl, i) => {
-        lvl.style.top =  top * (0.6 + i * 0.02) + 'px'
-    })
+    level.style.top = top * 0.6 + 'px'
 }
 
 
