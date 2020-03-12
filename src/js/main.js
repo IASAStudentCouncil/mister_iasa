@@ -1,5 +1,7 @@
 let peaky = document.getElementById('peaky__blinders')
 let man = document.getElementById('man')
+const levels = Array.from(document.querySelectorAll('.lvl'))
+
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -13,16 +15,25 @@ document.addEventListener('DOMContentLoaded', function () {
     })
  })
 
-window.addEventListener('scroll', () => {
-    parallax(pageYOffset)
-})
-
-function parallax(top) {
-        peaky.style.top = 100 + top/2 + 'px'
-        man.style.top = 90 - top/5 + 'px'
+if(document.body.clientWidth > 974) {
+    window.addEventListener('scroll', () => {
+        parallax_desktop(pageYOffset)
+    })
+} else {
+    window.addEventListener('scroll', () => {
+        parallax_mobile(pageYOffset)
+    })
 }
 
+function parallax_desktop(top) {
+    peaky.style.top = 100 + top/2 + 'px'
+    man.style.top = 90 - top/5 + 'px'
+}
 
-
+function parallax_mobile(top) {
+    levels.forEach((lvl, i) => {
+        lvl.style.top =  top * (0.6 + i * 0.02) + 'px'
+    })
+}
 
 
