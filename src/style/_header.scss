@@ -12,6 +12,9 @@ header {
 	color:$primary-text;
 }
 
+nav{
+    margin-top: 15px;
+}
 @media (max-width: $breakpoint-large) {
 	.nav-link{
 		font-size: 20px;
@@ -299,6 +302,7 @@ header {
         background:#852525 url(../img/mob_back.jpg) no-repeat center center;
     }
     nav{
+        margin-top: 0px;
         background: url(../img/mob_nav.jpg) no-repeat center center;
         opacity: 100%;
     }
