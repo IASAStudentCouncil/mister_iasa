@@ -269,13 +269,13 @@ nav{
 
 @media (max-width: $breakpoint-large) {
     header{
-        height: 720px;
+       // height: 720px;
     }
 }
 
 @media (max-width: 1024px) {
     header{
-        height: 570px;
+      //  height: 570px;
     }
 }
 
@@ -295,7 +295,6 @@ nav{
     }
     
     header{
-        height: 100vh!important;
         background:#852525;
     }
     nav{
