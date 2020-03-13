@@ -5,6 +5,7 @@ const mobile_nav = document.getElementById('menu_expand')
 const top_nav = document.getElementById('top_nav')
 const leza = document.querySelector('.leza')
 const header = document.querySelector('header')
+const peaky_mob = document.getElementById('peaky_mob')
 
 document.addEventListener('DOMContentLoaded', function () {
     // Menu navigate animation
@@ -37,14 +38,15 @@ function parallax_desktop(offset) {
 
 function parallax_mobile(offset) {
     level.style.top = offset * 0.6 + 'px'
+    peaky_mob.style.top = offset * 0.5 + 'px'
 }
 
 function menu() {
     if(!top_nav.className) {
         top_nav.className = 'responsive'
-        leza.style.top = -219.2 + 'px' // maybe container.clientHeight
+        leza.style.top = -296.8 + 'px' // maybe container.clientHeight
     } else {
         top_nav.className = ''
-        leza.style.top = -60.8 + 'px' // maybe container.clientHeight
+        leza.style.top = -52.8 + 'px' // maybe container.clientHeight
     }
 }

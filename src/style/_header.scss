@@ -142,7 +142,7 @@ nav{
     width: 100%;
     height: 100%;
     position: relative;
-    top: -60.8px;
+    top: -52.8px;
     
     #lvl {
         position: absolute;
@@ -267,10 +267,6 @@ nav{
     }
 }
 
-.container > .responsive ~ .leza {
-    border: 10px solid white;
-}
-
 @media (max-width: $breakpoint-large) {
     header{
         height: 720px;
@@ -285,7 +281,7 @@ nav{
 
 @media (max-width: 768px) {
     header{
-        background:#852525 url(../img/mob_back.jpg) no-repeat center center;
+        background:#852525;
     }
 }
 
@@ -300,7 +296,7 @@ nav{
     
     header{
         height: 100vh!important;
-        background:#852525 url(../img/mob_back.jpg) no-repeat center center;
+        background:#852525;
     }
     nav{
         margin-top: 0px;
@@ -327,5 +323,17 @@ nav{
     }
     a.icon:hover{
         color: #000!important;
+    }
+}
+
+#peaky_mob {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+    img{
+        top: 25%;
+        width: 100%;
+        position: absolute;
     }
 }
