@@ -28,12 +28,18 @@ header {
 
 #top_nav {
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    width: 100%;
+    z-index: 100;
     
     a {
         float: left;
         display: block;
         /*color: #f2f2f2;*/
-        color: #060606;
+        color: #fff;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -54,6 +60,14 @@ header {
 
 @media screen and (max-width: 600px) {
     #top_nav {
+        a{
+            //background-color: #ddd;
+            color: black;
+        }
+        a:hover {
+            //background-color: #ddd;
+            color: white;
+        }
         a:not(:first-child) {
             display: none;
         }
@@ -252,4 +266,46 @@ header {
 
 .container > .responsive ~ .leza {
     border: 10px solid white;
+}
+
+@media (max-width: $breakpoint-large) {
+    header{
+        height: 720px;
+    }
+}
+
+@media (max-width: 1024px) {
+    header{
+        height: 570px;
+    }
+}
+
+@media (max-width: 768px) {
+    header{
+        background:#852525 url(../img/mob_back.jpg) no-repeat center center;
+    }
+}
+
+@media (max-width: 600px) {
+    header{
+        background:#852525 url(../img/mob_back.jpg) no-repeat center center;
+    }
+    nav{
+        background: url(../img/mob_nav.jpg) no-repeat center center;
+        opacity: 100%;
+    }
+    nav a{
+        color: #000;
+    }
+    nav .responsive{
+        width: 100%;
+        background:#fff url(../img/mob_nav_active.jpg) no-repeat center center;
+    }
+    #top_nav.responsive a{
+        padding: 14px 16px 4px 16px;
+    }
+    a.icon{
+        position: absolute;
+        right:0px;
+    }
 }

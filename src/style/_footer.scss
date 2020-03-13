@@ -13,4 +13,8 @@ footer {
     }
 }
 
-
+@media (max-width: 576px) {
+    footer{
+        height: 272px;
+    }
+}
