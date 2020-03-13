@@ -32,7 +32,7 @@ header {
     align-items: center;
     align-content: center;
     justify-content: flex-start;
-    width: 100%;
+    // width: 100%;
     z-index: 100;
     
     a {
@@ -287,6 +287,14 @@ header {
 }
 
 @media (max-width: 600px) {
+    .navbar-link{
+        width: auto!important;
+        display: none!important;
+    }
+    #top_nav{
+        display: block;
+    }
+    
     header{
         background:#852525 url(../img/mob_back.jpg) no-repeat center center;
     }
@@ -301,11 +309,18 @@ header {
         width: 100%;
         background:#fff url(../img/mob_nav_active.jpg) no-repeat center center;
     }
+    a:hover,a:active{
+        color: #852525!important;
+    }
     #top_nav.responsive a{
         padding: 14px 16px 4px 16px;
     }
     a.icon{
         position: absolute;
         right:0px;
+        color: #000!important;
+    }
+    a.icon:hover{
+        color: #000!important;
     }
 }
