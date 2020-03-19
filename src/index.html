@@ -16,9 +16,10 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" >
 
     <meta property="og:site_name" content="MISTER IASA 2020 - PEAKY BLINDERS" />
     <meta property="og:title" content="MISTER IASA 2020 - PEAKY BLINDERS" />
@@ -46,8 +47,13 @@
 
     //= partials/_header.html
     //= partials/_teaser.html
+    //= partials/_meeting.html
     //= partials/_footer.html
-
+    <script src="js/desk-slider.min.js"></script>
+    <script>
+        baguetteBox.run('.grid-gallery', { animation: 'slideIn'});
+    </script>
+    <script src="js/swiper.min.js"></script>
     <script src="js/main-min.js"></script>
 </body>
 
