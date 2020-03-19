@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         })
     
-    
     header.style.height = screen.height + 'px' // kaef dlya mobilok
+    
     if(document.body.clientWidth > 974) {
         setInterval(() => {
             parallax_desktop(pageYOffset)
