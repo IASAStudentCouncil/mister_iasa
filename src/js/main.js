@@ -10,7 +10,7 @@ const slider = document.getElementById('slider')
 
 document.addEventListener('DOMContentLoaded', function () {
     // Menu navigate animation
-    document.querySelectorAll('.nav-item>.nav-link').forEach(link => {
+    document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', event => {
             event.preventDefault()
             var id = link.getAttribute('href')
