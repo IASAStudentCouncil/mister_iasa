@@ -2,7 +2,7 @@
 
 # About
  Wave Landing Page  
- Design: https://www.figma.com/file/tiL6Eu1FVQZJTG4o9orSJ5/mister-huister
+ Design: https://www.figma.com/file/BjhghbSaEMCzcdMcsUudh3/WAVE-site
 
 
 # Development
