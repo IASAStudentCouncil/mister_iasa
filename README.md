@@ -1,5 +1,3 @@
-[![MISTER IASA GH-pages CI](https://github.com/IASAStudentCouncil/mister_iasa/workflows/MISTER%20IASA%20GH-pages%20CI/badge.svg)](https://iasastudentcouncil.github.io/mister_iasa/)
-
 # Mister IASA 2020
 This repository contains the landing page for the **Mister IASA 2020** event, inspired by the Peaky Blinders theme. The page is designed to provide information about the event, including teasers, photoshoots, and more.
 
